@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
+
+$dark : #FF8E00;
+$mdark : #678983;
+$mlight : #E6DDC4;
+$light : #F0E9D2;
+// https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/alessandro-capuzzi-799180-unsplash.webp
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  
+ background-color: #FFE53B;
+  background-image: linear-gradient(147deg, #FFE53B55 0%, #fd383855 74%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height: 100vh;
+  font-family: 'Fira Sans', sans-serif;
+}
+.card{
+  
+    margin:auto;
+    background-color:#EEF2FF;
+    color: $mdark;
+  min-width:250px;
+    max-width:350px;
+    box-shadow: 0px 14px 10px rgba(34, 35, 58, 0.2);
+    border-radius:10px;
+  position:relative;
+  
+  .card-header{
+   
+    padding:10px 20px;
+    
+    .title{
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+    
+    
+    
+  }
+  .card-body{
+    .image{
+      min-height:200px;
+      min-width:100%;
+      overflow:hidden;
+    
+      position:relative;      
+      &::before{
+        content:'';
+        width:100%;
+        height:100%;
+        position: absolute;
+        top:0;
+        left:0;
+          background-image:url('https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/alessandro-capuzzi-799180-unsplash.webp');
+      background-position: center center;
+      background-size:cover;
+      background-repeat:no-repeat;
+        opacity:80%;
+          transition: all .3s;
+      }
+      
+      &::after{
+        content:'';
+        width:100%;
+        height:100%;
+        position: absolute;
+        top:0;
+        left:0;
+        background-image:linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+        opacity:80%
+      }
+      &:hover::before{
+        transform: scale(1.2);
+      }
+    }
+    
+    .cantent{
+      border: 1px solid $mlight;
+      border-width: 0 0 1px 0; 
+      padding:10px 20px;
+      text-align:justify;
+      text-justify:inner-word;
+      word-spacing: normal;
+      
+      
+      .btn{
+        background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+        min-width:50%;
+        max-width:70%;
+        border-radius:30px;
+        padding:15px 40px;
+        text-align:center;
+        margin:auto;
+        color:white;
+        box-shadow:0px 14px 80px rgba(252, 56, 56, 0.4);
+        text-transform:uppercase;
+        margin-top:15px;
+        margin-bottom:15px;
+        transition: all .2s;
+        position:relative;
+        z-index:0;
+        &::before{
+          content:'';
+          width:100%;
+          height:100%;
+          background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+          position:absolute;
+          left:0;
+          top:0;
+          z-index:-1;
+          border-radius:30px;
+          transition:all .2s;
+          
+            
+        }
+        
+        &:hover{
+          transform:scale(1.1);
+          cursor:pointer;
+        }
+        &:hover::before{
+          transform:scale(1.5);
+          opacity:0;
+          
+        }
+        &:active{
+          transform:scale(1.05);
+        }
+        
+      }
+      
+      
+      
+    }
+    
+  }
+  .card-footer{
+    padding:10px 20px;
+    text-align:center;
+  }
+  
+  &::after , &::before{
+    
+    content:'';
+    position:absolute;
+    
+  }
+  
+  &::before{
+    background-color:#fd3838;
+    top:-3%;
+    right:10%;
+    width:25px;
+    height:25px;
+    z-index:-1;
+    border-radius: 50%;
+    transform:translateX(100%);
+  }
+  &::after{
+    background-color:#fe8a39;
+    right:10.2%;
+    top:-3%;
+    width:50px;
+    height:150px;
+    border-radius: 20px 0px 0 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+    transition:all 0.2s cubic-bezier(.45,.05,.55,.95);
+    transform-origin:top;
+  }
+  
+  &:hover::after{
+    transform: scaleY(1.1);
+  }
+  
+  
+  .i{
+    position:absolute;
+    background-color:#fe8a39;
+    right:10%;
+    top:-3%;
+    width:50px;
+    height:20px;
+    z-index:-2;
+    border-radius: 0px 50px 50px 0;
+    transform:translateX(40%);
+  }
+  
+  
+  
+}
